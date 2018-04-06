@@ -62,11 +62,11 @@ exports.getParser = function () {
       // remove the processed value from the map
       delete this.value[k];
     }
-  }
+  };
 
   parser.onError = function (e) {
     jsonstream.emit('error', e);
-  }
+  };
 
   return jsonstream;
 };

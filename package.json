@@ -7,5 +7,9 @@
     "stream": "0.0.2",
     "through": "^2.3.8",
     "zlib": "^1.0.5"
+  },
+  "jshintConfig": {
+    "esversion": 6,
+    "node": true
   }
 }

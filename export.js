@@ -26,7 +26,7 @@ var request = require('request'),
     streamparser = require('./streamparser');
 
 // setup compression (by default)
-var extract = null, //zlib.createGunzip(),
+var extract = zlib.createGunzip(),
     compress = zlib.createGzip();
 
 var expectedArgKeys = ['inputURL', 'inputPath', 'outputPath', 'noCompressedInput', 'noCompressedOutput', 'fillWithNulls'];
@@ -40,7 +40,7 @@ var usage = function (err) {
   console.error('  --noCompressedInput (optional): use flag if input is NOT gzipped');
   console.error('  --noCompressedOutput (optional): use flag if output should NOT be gzipped');
   console.error('  --fillWithNulls (optional): fill empty columns with NULL');
-}
+};
 
 var argv = minimist(process.argv.slice(2), {
   string: ['inputURL', 'inputPath', 'outputPath'],
